@@ -16,7 +16,7 @@ else:
     args += ["-fopenmp"]
 
 ffi = create_extension(
-    "_ext.transducer",
+    name="transducer._ext.transducer",
     package=True,
     headers=headers,
     sources=sources,
@@ -32,5 +32,6 @@ setup(
     author="Awni Hannun",
     license="Apache",
     packages=find_packages(),
+    py_modules=['decoders'],
     ext_modules=[ffi],
 )
